@@ -27,9 +27,7 @@ transform:skew(60deg, -30deg) scaleY(.66667);
 .fourth {
     grid-area:fourth;
 }
-.fifth {
-    grid-area:fifth;
-}
+
 #navwrapper {
     display:grid;
     grid-template-areas:
