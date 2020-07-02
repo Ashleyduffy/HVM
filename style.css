@@ -6,3 +6,29 @@ height:100%;
 h1{
 transform:skew(60deg, -30deg) scaleY(.66667);
 }
+/*This stuff is to make my navigation go horizontal on full screen*/
+.first {
+    grid-area:first;
+    margin-left:0;
+}
+.second {
+    grid-area:second;
+}
+.third {
+    grid-area:third;
+}
+.fourth {
+    grid-area:fourth;
+}
+.fifth {
+    grid-area:fifth;
+}
+#navwrapper {
+    display:grid;
+    grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth";
+    }
