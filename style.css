@@ -51,7 +51,6 @@ footer {
     "nav"
     "header"
     "main"
-    "aside"
     "footer";
   }
 /*This stuff is for the hamburger menu*/
@@ -125,7 +124,7 @@ nav ul {
     grid-template-areas:
     "nav nav"
     "header header"
-    "main aside"
+    "main main"
     "footer footer";
     }
  /*---------------------Desktop media query----------------------------*/
@@ -136,7 +135,7 @@ nav ul {
     grid-template-areas:
     "nav nav"
     "header header"
-    "main aside"
+    "main main"
     "footer footer";
     }
 #navwrapper {
