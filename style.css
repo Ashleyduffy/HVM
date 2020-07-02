@@ -6,6 +6,7 @@ height:100%;
 h1{
 transform:skew(60deg, -30deg) scaleY(.66667);
  color:black;
+ text-align:center;
 }
  &:nth-child(odd) {
     transform: skew(60deg, -30deg) scaleY(.66667);
