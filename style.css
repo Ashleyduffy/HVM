@@ -6,6 +6,12 @@ height:100%;
 h1{
 transform:skew(60deg, -30deg) scaleY(.66667);
 }
+ &:nth-child(odd) {
+    transform: skew(60deg, -30deg) scaleY(.66667);
+  }
+  &:nth-child(even) {
+    transform: skew(0deg, -30deg) scaleY(1.33333);
+  }
 /*This stuff is to make my navigation go horizontal on full screen*/
 .first {
     grid-area:first;
