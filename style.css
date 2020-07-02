@@ -13,6 +13,73 @@ transform:skew(60deg, -30deg) scaleY(.66667);
   &:nth-child(even) {
     transform: skew(0deg, -30deg) scaleY(1.33333);
   }
+nav {
+    background-color:#FFAA00;
+    font-size:125%;
+    grid-area:nav;
+    text-align:center;
+    padding:.5em;
+    margin:0;
+    /*Lines 102 to 105 make the menu stick to the top*/
+    position: sticky;
+    top:0;
+    z-index:999;
+}
+
+footer {
+    background:rgba(255,255,255,.3);
+    color:navy;
+    text-align:center;
+    grid-area:footer;
+    }
+
+
+   
+/*--------Mobile first - no media query needed until the screen is larger than 480px---------*/
+.wrapper1 { /*index.html*/
+    display: grid;
+    margin:0;
+    grid-gap: .5em;
+    grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "aside"
+    "footer";
+  }
+/*This stuff is for the hamburger menu*/
+.toggleNav {
+    display:grid; /*This is what allows the hamburger icon and "Menu" to display*/
+    }
+
+#flex-nav ul {
+    display: none; /*jQuery toggles the nav from to this class to the .open when clicked*/
+    text-align:center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+ 
+#flex-nav ul.open { /*.open is the class that gets toggled when clicked (with help from the jQuery code)*/
+    display:grid;
+    }
+    
+#flex-nav li {
+    padding-left:10px;
+    padding-top:10px;
+    }
+#flex-nav a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    }
+#flex-nav a:hover {
+    color:white;
+    }
+
+nav ul {
+ list-style-type: none;
+}
 /*This stuff is to make my navigation go horizontal on full screen*/
 .first {
     grid-area:first;
@@ -27,7 +94,9 @@ transform:skew(60deg, -30deg) scaleY(.66667);
 .fourth {
     grid-area:fourth;
 }
-
+.fifth {
+    grid-area:fifth;
+}
 #navwrapper {
     display:grid;
     grid-template-areas:
@@ -37,3 +106,55 @@ transform:skew(60deg, -30deg) scaleY(.66667);
     "fourth"
     "fifth";
     }
+    
+#content-desktop {
+  display:none;
+}
+#content-mobile {
+  display:grid;
+}
+/*---------------------Tablet media query----------------------------*/
+@media only screen and (min-width: 480px)  {
+.wrapper1 { /*index.html*/
+    grid-template-columns: 45% auto;
+    grid-template-areas:
+    "nav nav"
+    "header header"
+    "main aside"
+    "footer footer";
+    }
+ /*---------------------Desktop media query----------------------------*/
+@media only screen and (min-width: 1100px)   {
+     
+.wrapper1 { /*index.html*/
+    grid-template-columns: 60% auto;
+    grid-template-areas:
+    "nav nav"
+    "header header"
+    "main aside"
+    "footer footer";
+    }
+#navwrapper {
+    display:grid;
+    grid-template-areas:
+    "first second third fourth fifth";
+    }
+    
+.toggleNav {
+    display: none; /*Makes the hamburger icon with the word "Menu" to disappear at this screen size*/
+  }
+  
+  
+#flex-nav ul {
+    display:grid;
+    text-align:center;
+}
+#flex-nav li {
+    padding-top:10px;
+}
+#content-desktop {
+  display:grid;
+}
+#content-mobile {
+  display:none;
+}
