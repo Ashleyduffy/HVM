@@ -94,9 +94,7 @@ nav ul {
 .fourth {
     grid-area:fourth;
 }
-.fifth {
-    grid-area:fifth;
-}
+
 #navwrapper {
     display:grid;
     grid-template-areas:
@@ -104,7 +102,7 @@ nav ul {
     "second"
     "third"
     "fourth"
-    "fifth";
+   ;
     }
     
 #content-desktop {
@@ -137,7 +135,7 @@ nav ul {
 #navwrapper {
     display:grid;
     grid-template-areas:
-    "first second third fourth fifth";
+    "first second third fourth";
     }
     
 .toggleNav {
