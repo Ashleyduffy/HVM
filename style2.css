@@ -1,0 +1,214 @@
+nav {
+    background-color:#FFAA00;
+	font-family: "Archivo Black", "Archivo", sans-serif;
+    font-size:125%;
+    grid-area:nav;
+    text-align:center;
+    padding:.5em;
+    margin:0;
+	text-shadow: 2px 2px 0px black;
+    /*Lines 102 to 105 make the menu stick to the top*/
+    position: sticky;
+    top:0;
+    z-index:999;
+}
+
+
+
+@function textShadow($precision, $size, $color){
+  $value: null;
+  $offset: 0;
+  $length: $size * (1 / $precision) - 1;
+
+  @for $i from 0 through $length {
+    $offset: $offset + $precision;
+    $shadow: $offset + px $offset + px $color;
+    $value: append($value, $shadow, comma);
+}
+
+  @return $value;
+}
+
+.playful span {
+  position: relative;
+  color: #03DDDC;
+  text-shadow: 4px 4px 0px #0310EA;
+  animation: scatter 1.75s infinite;
+  
+}
+
+.playful span:nth-child(2n) {
+  color: #FEF900;
+  text-shadow: 4px 4px 0px #FC00C3;
+  animation-delay: 0.3s;
+}
+
+.playful span:nth-child(3n) {
+  color: #FF822E;
+  text-shadow: 4px 4px 0px #7300FC;
+  animation-delay: 0.15s;
+}
+
+.playful span:nth-child(4n) {
+  color: #F21A1D;
+  text-shadow: 4px 4px 0px #B8FB3C;
+  animation-delay: 0.4s;
+}
+
+
+
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+body {
+  background-color: #FFF7E4;
+}
+
+h1 {
+  font-size: 65px;
+  text-transform: uppercase;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: normal;
+  display: block;
+  width: 45em;
+  
+  max-width: 95vw;
+  min-height: 90px;
+  height: auto;
+text-align: center;
+
+
+}
+
+/*--------Mobile first - no media query needed until the screen is larger than 480px---------*/
+.wrapper1 { /*index.html*/
+    display: grid;
+    margin:0;
+    grid-gap: .5em;
+    grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "footer";
+  }
+/*This stuff is for the hamburger menu*/
+.toggleNav {
+    display:grid; /*This is what allows the hamburger icon and "Menu" to display*/
+    }
+
+#flex-nav ul {
+    display: none; /*jQuery toggles the nav from to this class to the .open when clicked*/
+    text-align:center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+ 
+#flex-nav ul.open { /*.open is the class that gets toggled when clicked (with help from the jQuery code)*/
+    display:grid;
+    }
+    
+#flex-nav li {
+    padding-left:10px;
+    padding-top:10px;
+    }
+#flex-nav a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    }
+#flex-nav a:hover {
+    color:white;
+    }
+
+nav ul {
+ list-style-type: none;
+}
+/*This stuff is to make my navigation go horizontal on full screen*/
+.first {
+    grid-area:first;
+    margin-left:0;
+	
+	
+}
+.second {
+    grid-area:second;
+}
+.third {
+    grid-area:third;
+}
+.fourth {
+    grid-area:fourth;
+}
+
+#navwrapper {
+    display:grid;
+    grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+   ;
+    }
+    
+#content-desktop {
+  display:none;
+}
+#content-mobile {
+  display:grid;
+}
+/*---------------------Tablet media query----------------------------*/
+@media only screen and (min-width: 480px)  {
+.wrapper1 { /*index.html*/
+    grid-template-columns: 45% auto;
+    grid-template-areas:
+    "nav nav"
+    "header header"
+    "main main"
+    "footer footer";
+    }
+ /*---------------------Desktop media query----------------------------*/
+@media only screen and (min-width: 1100px)   {
+     
+.wrapper1 { /*index.html*/
+    grid-template-columns: 60% auto;
+    grid-template-areas:
+    "nav nav"
+    "header header"
+    "main main"
+    "footer footer";
+    }
+#navwrapper {
+    display:grid;
+    grid-template-areas:
+    "first second third fourth";
+    }
+    
+.toggleNav {
+    display: none; /*Makes the hamburger icon with the word "Menu" to disappear at this screen size*/
+  }
+  
+  
+#flex-nav ul {
+    display:grid;
+    text-align:center;
+}
+#flex-nav li {
+    padding-top:5px;
+}
+#content-desktop {
+  display:grid;
+}
+#content-mobile {
+  display:none;
+  }
+  
