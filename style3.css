@@ -1,0 +1,472 @@
+
+@function textShadow($precision, $size, $color){
+  $value: null;
+  $offset: 0;
+  $length: $size * (1 / $precision) - 1;
+
+  @for $i from 0 through $length {
+    $offset: $offset + $precision;
+    $shadow: $offset + px $offset + px $color;
+    $value: append($value, $shadow, comma);
+}
+
+  @return $value;
+}
+
+.playful span {
+  position: relative;
+  color: #03DDDC;
+  text-shadow: 4px 4px 0px #0310EA;
+  animation: scatter 1.75s infinite;
+  
+}
+
+.playful span:nth-child(2n) {
+  color: #FEF900;
+  text-shadow: 4px 4px 0px #FC00C3;
+  animation-delay: 0.3s;
+}
+
+.playful span:nth-child(3n) {
+  color: #FF822E;
+  text-shadow: 4px 4px 0px #7300FC;
+  animation-delay: 0.15s;
+}
+
+.playful span:nth-child(4n) {
+  color: #F21A1D;
+  text-shadow: 4px 4px 0px #B8FB3C;
+  animation-delay: 0.4s;
+}
+
+
+
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+body {
+  background-color: #FFF7E4;
+}
+nav {
+    background-color:#03DDDC;
+	font-family: "Archivo Black", "Archivo", sans-serif;
+    font-size:125%;
+    grid-area:nav;
+    text-align:center;
+    padding:.5em;
+    margin:0;
+	text-shadow: 2px 2px 0px black;
+    /*Lines 102 to 105 make the menu stick to the top*/
+    position: sticky;
+    top:0;
+    z-index:999;
+}
+.header{
+background: linear-gradient(to right, #03DDDC, #FC00E1);	
+	
+}
+nav{
+	grid-area:nav;
+	
+}
+header{
+	grid-area:header;
+	
+	
+}
+
+main{
+	grid-area:main;
+	
+	text-align: center;
+}
+main h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: normal;
+  display: block;
+  width: 45em;
+  color:#FC00E1;
+  text-shadow: 3px 3px 0 black;
+  max-width: 95vw;
+  min-height: 90px;
+  height: auto;
+text-align: center;
+
+
+}
+main h2{
+	font-family: "Archivo Black", "Archivo", sans-serif;
+	color:#03DDDC;
+	text-shadow: 2px 2px 0 black;
+	text-align: center;
+	margin: 10px;
+}
+header p{
+	font-family: "Archivo Black", "Archivo", sans-serif;
+}
+
+.message{
+	border: 1px solid #999;
+	margin:30px;
+}
+.mission{
+	border: 1px solid #999;
+	margin:30px;
+}
+.products{
+	max-height: 400px;
+}
+
+.mainwrapper{
+	display:grid;
+	grid-template-columns:50% auto;
+	grid-template-areas:
+	"main1"
+	"main2"
+}
+.main1{
+	grid-area:"main1"
+	
+}
+
+.main2{
+	grid-area:"main2"
+	
+}
+
+figure{
+	padding:5px;
+	margin:10px;
+	border: 2px solid #999;
+}
+
+
+
+figcaption{
+	background-color: #FC00E1;
+	font-style: bold;
+	padding:5px;
+	text-align: center;
+font-family: "Archivo Black", "Archivo", sans-serif;
+}
+.img:target {
+        height: 450px;
+        width: 500px;
+    }
+    .img:target+.close {
+        display: block;
+    }
+    .img:target+.close+.expand{
+        display: none;
+    }
+    .close {
+        background-image: url(https://bit.ly/29QeT21);
+        background-repeat: no-repeat;
+        bottom: 418px;
+        display: none;
+        height: 32px;
+        left: 462px;
+        margin-top: -32px;  
+        position: relative;
+        width: 32px;
+    }
+    .expand{
+        bottom: 125px;
+        margin-left: -32px;
+        margin-right: 16px;
+        pointer-events: none;
+        position: relative;
+    }
+    #wrapper {
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+        width: 500px;
+    }
+
+
+
+
+
+
+.cart{
+	max-width:40px;
+	margin-top:160px ;
+	
+}
+h3{
+	font-family: "Archivo Black", "Archivo", sans-serif;
+}
+.wrapper{
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	height:500px;
+	
+}
+
+
+
+.element {
+  height: 35em;
+  width: 70em;
+  margin: 0 auto;
+  background-color: #FFF7E4;
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    background-color: #F21A1D;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #FC00C3;
+  }
+  100% {
+    transform: scale(1.2);
+   
+  }
+}
+
+
+
+
+
+
+footer{
+	grid-area:footer;
+	border: 1px solid #999;
+}
+@function textShadow($precision, $size, $color){
+  $value: null;
+  $offset: 0;
+  $length: $size * (1 / $precision) - 1;
+
+  @for $i from 0 through $length {
+    $offset: $offset + $precision;
+    $shadow: $offset + px $offset + px $color;
+    $value: append($value, $shadow, comma);
+}
+
+  @return $value;
+}
+
+.playful span {
+  position: relative;
+  color: #03DDDC;
+  text-shadow: 4px 4px 0px #0310EA;
+  animation: scatter 1.75s infinite;
+  
+}
+
+.playful span:nth-child(2n) {
+  color: #FEF900;
+  text-shadow: 4px 4px 0px #FC00C3;
+  animation-delay: 0.3s;
+}
+
+.playful span:nth-child(3n) {
+  color: #FF822E;
+  text-shadow: 4px 4px 0px #7300FC;
+  animation-delay: 0.15s;
+}
+
+.playful span:nth-child(4n) {
+  color: #F21A1D;
+  text-shadow: 4px 4px 0px #B8FB3C;
+  animation-delay: 0.4s;
+}
+
+
+
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+
+
+h1 {
+  font-size: 65px;
+  text-transform: uppercase;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: normal;
+  display: block;
+  width: 45em;
+  
+  max-width: 95vw;
+  min-height: 90px;
+  height: auto;
+text-align: center;
+
+
+}
+main h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: normal;
+  display: block;
+  width: 45em;
+  color:#FC00E1;
+  text-shadow: 3px 3px 0 black;
+  max-width: 95vw;
+  min-height: 90px;
+  height: auto;
+text-align: center;
+
+
+}
+
+/*--------Mobile first - no media query needed until the screen is larger than 480px---------*/
+.wrapper1 { /*index.html*/
+    display: grid;
+    margin:0;
+    grid-gap: .5em;
+    grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "footer";
+  }
+/*This stuff is for the hamburger menu*/
+.toggleNav {
+    display:grid; /*This is what allows the hamburger icon and "Menu" to display*/
+    }
+
+#flex-nav ul {
+    display: none; /*jQuery toggles the nav from to this class to the .open when clicked*/
+    text-align:center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+ 
+#flex-nav ul.open { /*.open is the class that gets toggled when clicked (with help from the jQuery code)*/
+    display:grid;
+    }
+    
+#flex-nav li {
+    padding-left:10px;
+    padding-top:10px;
+    }
+#flex-nav a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    }
+	
+#flex-nav a:hover {
+    color:#FC00C3;
+}
+nav ul {
+ list-style-type: none;
+}
+/*This stuff is to make my navigation go horizontal on full screen*/
+.first {
+    grid-area:first;
+    margin-left:0;
+	
+	
+}
+.second {
+    grid-area:second;
+}
+.third {
+    grid-area:third;
+}
+.fourth {
+    grid-area:fourth;
+}
+
+#navwrapper {
+    display:grid;
+    grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+   ;
+    }
+    
+#content-desktop {
+  display:none;
+}
+#content-mobile {
+  display:grid;
+}
+/*---------------------Tablet media query----------------------------*/
+@media only screen and (min-width: 480px)  {
+.wrapper1 { /*index.html*/
+    grid-template-columns: 45% auto;
+    grid-template-areas:
+    "nav nav"
+    "header header"
+    "main main"
+    "footer footer";
+    }
+ /*---------------------Desktop media query----------------------------*/
+@media only screen and (min-width: 1100px)   {
+     
+.wrapper1 { /*index.html*/
+    grid-template-columns: 60% auto;
+    grid-template-areas:
+    "nav nav"
+    "header header"
+    "main main"
+    "footer footer";
+}
+#navwrapper {
+    display:grid;
+    grid-template-areas:
+    "first second third fourth";
+    }
+    
+.toggleNav {
+    display: none; /*Makes the hamburger icon with the word "Menu" to disappear at this screen size*/
+  }
+  
+  
+#flex-nav ul {
+    display:grid;
+    text-align:center;
+}
+#flex-nav li {
+    padding-top:5px;
+}
+#content-desktop {
+  display:grid;
+}
+#content-mobile {
+  display:none;
+  }
+  
+
+
+  
