@@ -50,7 +50,10 @@
  color: red;
 }
 
-
+.box {
+  border: 1px;
+  padding: 10px;
+}
 
 
 input[type="radio"]{
@@ -441,21 +444,12 @@ header img{
 	
 	
 }
-.headertext{
-	grid-area:headertext;
-	margin-top:30px;
-	
-}
+
 .headerpic{
-	grid-area:headerpic;
-	margin:20px;
-	
-}
-.headerwrapper{
-	display: grid;
-	grid-template-columns:3fr 2fr;
-	grid-template-areas:
-	"headerpic headertext"
+	width:60em;
+	margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 main h2{
 	font-family: "Archivo Black", "Archivo", sans-serif;
@@ -500,7 +494,7 @@ header p{
 	grid-area:"main3"
 }
 figure{
-	padding:5px;
+	padding:10px;
 	margin:10px;
 	
 }
@@ -598,23 +592,22 @@ h3{
 }
 
 
-
-
 footer{
 	font-family: "Archivo Black", "Archivo", sans-serif;
 	grid-area:footer;
 	background-color:#03DDDC;
-	color:white;
+	color:#FC00E1;
 	text-align:center;
 	margin:10px;
-	font-size:150%;
-   
+	font-size: 250%;
     text-align:center;
-    padding:.5em;
+    
     margin:0;
 	text-shadow: 2px 2px 0px black;
 	
 }
+
+
 @function textShadow($precision, $size, $color){
   $value: null;
   $offset: 0;
@@ -725,11 +718,7 @@ text-align: center;
   
  
   
-  .headerwrapper{
-	grid-template-areas:
-	  "headerpic"
-	  "headertext"  
-  }
+  
   
 /*This stuff is for the hamburger menu*/
 .toggleNav {
@@ -824,11 +813,7 @@ nav ul {
     
 	
   
- .headerwrapper{
-	display: grid;
-	grid-template-columns:3fr 2fr;
-	grid-template-areas:
-	"headerpic headertext"
+	
 }
   .mainwrapper{
 	display:grid;
