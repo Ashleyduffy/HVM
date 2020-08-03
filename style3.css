@@ -1,3 +1,61 @@
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  
+  display:none;
+} 
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:850px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+  border-radius: 5px;
+  text-align: center;
+  
+  
+}
+
+
+  
+.winner{
+ font-family: "Archivo Black", "Archivo", sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 4vw;
+  z-index: 9999;
+  left:-550px;
+  width:30em;
+  position:absolute;
+  top:calc(50% - 1em);
+  
+  background: linear-gradient(to right, #03DDDC, #FC00E1);
+  transform:scale(0);
+  border: 10px solid red;
+}
+
+.agree:hover{
+  background-color: #D1D1D1;
+}
+.popupoption:hover{
+ background-color:#D1D1D1;
+ color: green;
+}
+.popupoption2:hover{
+ color: red;
+}
+
+.box {
+  border: 1px;
+  padding: 10px;
+}
+
+
 input[type="radio"]{
   display:none;
 }
@@ -8,13 +66,15 @@ body{
 }
 .board{
   font-size:1vmin;
-  outline:2em solid #333;
+  outline:200em solid #FFF7E4;
+  background-color:#03DDDC;
   width:60em;
   height:60em;
   position:absolute;
   left:calc(50% - 30em);
   top:calc(50% - 30em);
   overflow:hidden;
+  
 }
 [class^=peice]{
   position:absolute;
@@ -203,23 +263,18 @@ body{
 #h-right:checked ~ * .peice-h{
   left:40em;
 }
-.winner{
- font-family: "Archivo Black", "Archivo", sans-serif;
-  color: #fff;
-  text-align: center;
-  font-size: 4vw;
-  z-index: 100;
-  width:100%;
-  height:2em;
-  position:absolute;
-  top:calc(50% - 1em);
-  line-height: 2em;
-  background: linear-gradient(to right, #03DDDC, #FC00E1);
-  transform:scale(0);
+
+
+
+
+#a-up:checked ~ #a-left:checked ~ #b-up:checked ~ #b-center:checked ~ #c-up:checked ~ #c-right:checked ~ #d-middle:checked ~ #d-left:checked ~ #e-middle:checked ~ #e-center:checked ~ #f-middle:checked ~ #f-right:checked ~ #g-down:checked ~ #g-left:checked ~ #h-down:checked ~ #h-center:checked ~  .board{
+	opacity: 0;
+	transition: all 2s linear;
+	
 }
-#a-up:checked ~ #a-left:checked ~ #b-up:checked ~ #b-center:checked ~ #c-up:checked ~ #c-right:checked ~ #d-middle:checked ~ #d-left:checked ~ #e-middle:checked ~ #e-center:checked ~ #f-middle:checked ~ #f-right:checked ~ #g-down:checked ~ #g-left:checked ~ #h-down:checked ~ #h-center:checked ~ .winner{
-  animation:winner 3s 1 1s;
-}
+
+
+
 @keyframes winner{
   0%,100%{transform:scale(0);}
   10%,90%{transform:scale(1);}
@@ -243,9 +298,8 @@ body{
   border-bottom-color:teal;
   }
 #cage:checked ~ * [class^=peice]::after{
-  background-image:url(product1.jpg);
+  background-image:url(puzzle.jpeg);
 }
-
 
 
 
@@ -369,23 +423,34 @@ text-align: center;
 }
 
 header h1 {
-  font-size: 45px;
+  font-size: 40px;
   text-transform: uppercase;
   font-family: "Archivo Black", "Archivo", sans-serif;
   font-weight: normal;
   display: block;
-  width: 45em;
+  width: 20em;
   color:#FC00E1;
   text-shadow: 3px 3px 0 black;
-  max-width: 95vw;
+   max-width: 95vw;
   min-height: 90px;
   height: auto;
 text-align: center;
 
 
 }
+header img{
+	width:100%;
+	
+	
+	
+}
 
-
+.headerpic{
+	width:60em;
+	margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 main h2{
 	font-family: "Archivo Black", "Archivo", sans-serif;
 	color:#03DDDC;
@@ -411,10 +476,10 @@ header p{
 
 .mainwrapper{
 	display:grid;
-	grid-template-columns:50% auto;
+	grid-template-columns:33% 33% 33%;
 	grid-template-areas:
-	"main1"
-	"main2"
+	"main1 main2 main3"
+	
 }
 .main1{
 	grid-area:"main1"
@@ -425,11 +490,13 @@ header p{
 	grid-area:"main2"
 	
 }
-
+.main3{
+	grid-area:"main3"
+}
 figure{
-	padding:5px;
+	padding:10px;
 	margin:10px;
-	border: 2px solid #999;
+	
 }
 
 
@@ -454,7 +521,7 @@ font-family: "Archivo Black", "Archivo", sans-serif;
     .close {
         background-image: url(https://bit.ly/29QeT21);
         background-repeat: no-repeat;
-        bottom: 418px;
+        bottom: 480px;
         display: none;
         height: 32px;
         left: 462px;
@@ -476,11 +543,7 @@ font-family: "Archivo Black", "Archivo", sans-serif;
         width: 500px;
     }
 
-
-
-
-
-
+	
 .cart{
 	max-width:40px;
 	margin-top:160px ;
@@ -529,14 +592,22 @@ h3{
 }
 
 
-
-
-
-
 footer{
+	font-family: "Archivo Black", "Archivo", sans-serif;
 	grid-area:footer;
-	border: 1px solid #999;
+	background-color:#03DDDC;
+	color:#FC00E1;
+	text-align:center;
+	margin:10px;
+	font-size: 250%;
+    text-align:center;
+    
+    margin:0;
+	text-shadow: 2px 2px 0px black;
+	
 }
+
+
 @function textShadow($precision, $size, $color){
   $value: null;
   $offset: 0;
@@ -636,6 +707,19 @@ text-align: center;
     "main"
     "footer";
   }
+  .mainwrapper{
+	  display:grid;
+	  grid-template-columns:100%;
+	  grid-template-areas:
+	  "main1"
+	  "main2"
+	  "main3";
+  }
+  
+ 
+  
+  
+  
 /*This stuff is for the hamburger menu*/
 .toggleNav {
     display:grid; /*This is what allows the hamburger icon and "Menu" to display*/
@@ -699,9 +783,7 @@ nav ul {
 #content-desktop {
   display:none;
 }
-#content-mobile {
-  display:grid;
-}
+
 /*---------------------Tablet media query----------------------------*/
 @media only screen and (min-width: 480px)  {
 .wrapper1 { /*index.html*/
@@ -718,7 +800,7 @@ nav ul {
 .wrapper1 { /*index.html*/
     grid-template-columns: 60% auto;
     grid-template-areas:
-    "nav nav"
+   
     "header header"
     "main main"
     "footer footer";
@@ -729,6 +811,20 @@ nav ul {
     "first second third fourth";
     }
     
+	
+  
+	
+}
+  .mainwrapper{
+	display:grid;
+	grid-template-columns:33% 33% 33%;
+	grid-template-areas:
+	"main1 main2 main3"
+	
+}
+
+	
+	
 .toggleNav {
     display: none; /*Makes the hamburger icon with the word "Menu" to disappear at this screen size*/
   }
@@ -744,10 +840,3 @@ nav ul {
 #content-desktop {
   display:grid;
 }
-#content-mobile {
-  display:none;
-  }
-  
-
-
-  
