@@ -39,7 +39,14 @@
 }
 
 .box:hover img{
-	transform: scale(1.5);
+	transform:scale(1.25);
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 3px;
+  box-shadow: 5px 5px #999999;
+  /* To bring top */
+  position: relative;
+  z-index: 9999;
 }
 
 .box2{
@@ -57,7 +64,14 @@
 }
 
 .box2:hover img{
-	transform: scale(1.5);
+	transform:scale(1.25);
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 3px;
+  box-shadow: 5px 5px #999999;
+  /* To bring top */
+  position: relative;
+  z-index: 9999;
 }
 .box3{
 	
@@ -74,7 +88,14 @@
 }
 
 .box3:hover img{
-	transform: scale(1.5);
+	transform:scale(1.25);
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 3px;
+  box-shadow: 5px 5px #999999;
+  /* To bring top */
+  position: relative;
+  z-index: 9999;
 }
 
 .box4{
@@ -92,7 +113,14 @@
 }
 
 .box4:hover img{
-	transform: scale(1.5);
+	transform:scale(1.25);
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 3px;
+  box-shadow: 5px 5px #999999;
+  /* To bring top */
+  position: relative;
+  z-index: 9999;
 }
 .box5{
 	
@@ -109,7 +137,14 @@
 }
 
 .box5:hover img{
-	transform: scale(1.5);
+	transform:scale(1.25);
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 3px;
+  box-shadow: 5px 5px #999999;
+  /* To bring top */
+  position: relative;
+  z-index: 9999;
 }
 .box6{
 	
@@ -126,7 +161,14 @@
 }
 
 .box6:hover img{
-	transform: scale(1.5);
+	transform:scale(1.25);
+  border: 1px solid;
+  border-color: #999999;
+  border-radius: 3px;
+  box-shadow: 5px 5px #999999;
+  /* To bring top */
+  position: relative;
+  z-index: 9999;
 }
 
 
@@ -172,7 +214,7 @@ input[type="radio"]{
   display:none;
 }
 body{
-  background-color: #FFF7E4;
+  background-color: white;
   margin:0;
  padding:0;
   
@@ -180,7 +222,7 @@ body{
 }
 .board{
   font-size:1vmin;
-  outline:200em solid #FFF7E4;
+  outline:200em solid white;
   background-color:#03DDDC;
   width:60em;
   height:60em;
@@ -462,10 +504,11 @@ header img{
 }
 
 .headerpic{
-	width:60em;
+	
 	margin-left: auto;
   margin-right: auto;
   width: 50%;
+  
 }
 
 .products{
